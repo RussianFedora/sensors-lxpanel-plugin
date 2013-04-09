@@ -3,7 +3,7 @@ Version:        1.3
 Release:        1%{?dist}
 Summary:        Monitor temperature/voltages/fan speeds in LXDE through lm-sensors
 
-License:        GPLv3
+License:        GPLv2
 URL:            http://danamlund.dk/sensors_lxpanel_plugin/
 Source0:        http://danamlund.dk/sensors_lxpanel_plugin/%{name}-%{version}.tar.gz
 
