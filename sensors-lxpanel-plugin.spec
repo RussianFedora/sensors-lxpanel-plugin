@@ -11,6 +11,8 @@ BuildRequires:  lm_sensors-devel
 BuildRequires:  lxpanel-devel
 BuildRequires:  gtk2-devel
 
+Requires:       lxpanel
+
 %description
 Monitor temperature/voltages/fan speeds in LXDE using lm-sensors
 
@@ -26,9 +28,6 @@ make %{?_smp_mflags}
 mkdir -p %{buildroot}%{_libdir}/lxpanel/plugins
 make install DESTDIR=%{buildroot}%{_libdir}/lxpanel/plugins
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
 
 %files
 %doc README COPYING
