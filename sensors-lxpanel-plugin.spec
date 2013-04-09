@@ -1,5 +1,5 @@
 Name:           sensors-lxpanel-plugin
-Version:        1.2
+Version:        1.3
 Release:        1%{?dist}
 Summary:        Monitor temperature/voltages/fan speeds in LXDE through lm-sensors
 
@@ -24,18 +24,21 @@ make %{?_smp_mflags}
 
 %install
 mkdir -p %{buildroot}%{_libdir}/lxpanel/plugins
-install sensors.so %{buildroot}%{_libdir}/lxpanel/plugins
+make install DESTDIR=%{buildroot}%{_libdir}/lxpanel/plugins
 
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
 %files
-%doc README
+%doc README COPYING
 %{_libdir}/lxpanel/plugins/sensors.so
 
 
 
 %changelog
+* Mon Apr 08 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 1.3-1.R
+- Update to 1.3
+
 * Mon Apr 08 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2-1.R
 - Initial release
