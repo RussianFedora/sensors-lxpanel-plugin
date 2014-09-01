@@ -29,7 +29,7 @@ make %{?_smp_mflags}
 
 %install
 mkdir -p %{buildroot}%{_libdir}/lxpanel/plugins
-make install DESTDIR=%{buildroot}%{_libdir}/lxpanel/plugins
+%make_install
 
 
 %files
